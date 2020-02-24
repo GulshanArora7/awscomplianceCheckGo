@@ -72,28 +72,36 @@ type Cards struct {
 }
 
 // =========================================
+
+// Cidr struct
 type cidr struct {
 	CidrIP string `json:"cidrIp"`
 }
 
+// ipRanges struct
 type ipRanges struct {
 	Cidr []cidr `json:"items"`
 }
 
+// iTems struct
 type iTems struct {
 	FromPort int      `json:"fromPort"`
 	ToPort   int      `json:"toPort"`
 	IPRanges ipRanges `json:"ipRanges"`
 }
 
+// ipPermissions struct
 type ipPermissions struct {
 	Items []iTems `json:"items"`
 }
+
+// requestParameters struct
 type requestParameters struct {
 	GroupID       string        `json:"groupId"`
 	IPPermissions ipPermissions `json:"ipPermissions"`
 }
 
+// userIdentity struct
 type userIdentity struct {
 	Type        string `json:"type"`
 	PrincipalID string `json:"principalId"`
@@ -101,6 +109,7 @@ type userIdentity struct {
 	AccountID   string `json:"accountId"`
 }
 
+// cloudtraileventDetails struct
 type cloudtraileventDetails struct {
 	EventVersion      string            `json:"eventVersion"`
 	UserIdentity      userIdentity      `json:"userIdentity"`
